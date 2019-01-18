@@ -135,25 +135,26 @@ em {
     color: #11122b;
     text-align: center;
 }
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
 }
 
 input[type=submit] {
-    width: 49%;
-    padding: 15px;
+    width: 100%;
+    padding: 10px 0;
     margin-top: 30px;
     background: #11122b;
     border: none;
     color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px; 
+    /* font-size: 15px; */
+    /* font-weight: bold; */
+    /* letter-spacing: 1px;  */
     cursor: pointer;
-    
 }
+
+
 
 
 
