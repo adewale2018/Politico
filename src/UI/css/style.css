@@ -1,14 +1,14 @@
 /* CSS Variables */
-:root {
+/* :root {
     --primary: #0097a7;
     --dark: #333;
     --light: #fff;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-}
+} */
 html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--dark);
+    color: #333;
 }
 
 body {
@@ -16,14 +16,14 @@ body {
     padding: 0;
     background: #0097a7;
 }
+/* Styling of nav starts here */
 nav {
     background: #11122b;
-    /* background: wheat; */
     width: 100%;
-
 }
+
 ul {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
 }
@@ -36,13 +36,14 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: #fff;
+    color: wheat;
     font-size: 1.2rem;
     
 }
 
 ul li a:hover {
-    color: #dc461d;
+    
+    color: #fff;
 }
 
 
@@ -50,44 +51,25 @@ ul li a:hover {
     font-size: 2rem;
     font-family: 'Monoton', cursive;
     font-weight: 400;
-    color: #dc461d;
-    cursor: pointer;
+    /* color: #dc461d; */
+    color: #fff;
     letter-spacing: 3px;
-    /* margin-right: 150px; */
+}
+#quote{
+    margin-right: 120px;
 }
 span {
     color: #fff;
     font-family: 'Marck Script', cursive;
 }
 #brand:hover {
-    color: #fff;
-}
-
-hr {
-    font-weight: 100;
     color: wheat;
 }
+/* Styling of nav ends here */
 
-.left-section {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 20px;
-}
-.box{
-    background: var(--primary);
-    text-align: center;
-    padding: 1.5rem 2rem;
-    box-shadow: var(--shadow);
-}
-.zone {
-    color:#FFF;
-    font-size:2em;
-    border-radius:4px;
-    border:1px solid #bbb;
-    transition: all 0.3s linear;
-}
+/* Styling of homepage container starts here */
 .container {
-    height: 86vh; 
+    height: 86.3vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,63 +78,76 @@ hr {
     background-size: cover;
 }
 .container p {
-    color: green;
+    color: #7c0516;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    /* background: #11122b; */
     padding: 10px;
+    font-size:2em;
+    letter-spacing: 1px;
 }
-.grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-gap: 20px;
-}
-.box {
-    background-color: #444;
-    padding:10px;
-    margin: 20px;
-}
+/* Styling of homepage container ends here */
 
-.box > img {
-    width: 100%;
-}
-em {
-    font-size: 15px;
-}
 
-/* LOGIN FORM STYLE */
+/* LOGIN FORM STYLE starts here */
 .login-in{
     max-width: 350px;
-    padding: 40px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: auto;
-    font-size: 18px;
-
-}
-.login-in h1{
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 70px;
+    box-sizing: border-box;
     color: #11122b;
-    text-align: center;
+    font-size: 25px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.login-in h1{
+  text-align: left;
+  text-transform: uppercase;
+  color: whitesmoke;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  font-weight: 500px;
+  text-decoration: underline;
+  /* font-family: 'Raleway', sans-serif; */
 }
 input[type=email], input[type=password] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    outline: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000;
+  padding: 12px 12px 10px 10px;
+  width: 100%;
+  border: 1px solid #11122b;
+  box-sizing: border-box;
+  margin-bottom: 12px;
 }
 
+
 input[type=submit] {
-    width: 100%;
-    padding: 10px 0;
-    margin-top: 30px;
-    background: #11122b;
-    border: none;
-    color: #fff;
-    /* font-size: 15px; */
-    /* font-weight: bold; */
-    /* letter-spacing: 1px;  */
-    cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  background: #11122b;
+  border: none;
+  margin: 3em 0 1.5em;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 15px;
+  padding: 14px 0;
+  color: #fff;
+  cursor: pointer;
 }
+
+a{
+  color: #11122b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+
+
+
 
 
 
