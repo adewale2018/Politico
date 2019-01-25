@@ -1,10 +1,4 @@
-/* CSS Variables */
-/* :root {
-    --primary: #0097a7;
-    --dark: #333;
-    --light: #fff;
-    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-} */
+
 html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #0097a7;
+    background: #009199;
 }
 /* Styling of nav starts here */
 nav {
@@ -36,14 +30,14 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: wheat;
+    color: #fff;
     font-size: 1.2rem;
     
 }
 
 ul li a:hover {
     
-    color: #fff;
+    color: wheat;
 }
 
 
@@ -51,8 +45,7 @@ ul li a:hover {
     font-size: 2rem;
     font-family: 'Monoton', cursive;
     font-weight: 400;
-    /* color: #dc461d; */
-    color: #fff;
+    color: wheat;
     letter-spacing: 3px;
 }
 #quote{
@@ -78,7 +71,7 @@ span {
     background-size: cover;
 }
 .container p {
-    color: #7c0516;
+    color: #487d05;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding: 10px;
@@ -96,7 +89,7 @@ span {
     margin-top: 70px;
     box-sizing: border-box;
     color: #11122b;
-    font-size: 25px;
+    font-size: 18px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -104,15 +97,12 @@ span {
   text-align: left;
   text-transform: uppercase;
   color: whitesmoke;
-  font-size: 28px;
+  font-size: 16px;
   letter-spacing: 2px;
-  margin-bottom: 40px;
-  font-weight: 500px;
-  text-decoration: underline;
-  /* font-family: 'Raleway', sans-serif; */
+  margin-bottom: 20px;
 }
 input[type=email], input[type=password] {
-    outline: none;
+  outline: none;
   font-size: 14px;
   letter-spacing: 1px;
   color: #000;
@@ -138,39 +128,13 @@ input[type=submit] {
   cursor: pointer;
 }
 
-a{
-  color: #11122b;
-  font-size: 16px;
-  letter-spacing: 1px;
-  font-weight: bold;
+a {
+ color: #11122b;
+ font-size: 14px;
+ letter-spacing: 1px;
+ font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 /* media query */
@@ -188,6 +152,3 @@ a{
     input[type=submit] {
         width: 100%;
     }
-    
-}
-
