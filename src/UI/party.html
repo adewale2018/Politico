@@ -20,83 +20,90 @@
         <p>POLITICO</p>
         <ul>
             <li><a href="index.html">Homepage</a></li>
-            <li><a href="adminDashboard.html">Admin-mainpage</a></li>
-            <li><a href="#">Tasks<i class="fas fa-caret-down"></i></a>
+            <li><a href="adminDashboard.html">Dashboard<i class="fas fa-caret-down"></i></a>
                 <ul>
-                    <li><a href="party.html">Political Parties</a></li>
-                    <li><a href="#">Government Offices</a></li>
-                    <li><a href="#">Election Result</a></li>
-                    <li><a href="#">Create New Political Party</a></li>
+                    <li><a href="office.html">Political Offices</a></li>
+                    <li><a href="adminDashboard.html">Election Result</a></li>
                 </ul>
             </li>
+            <li><a href="#">Logout</a></li>
         </ul>
-    </nav>
+    </nav><br><br>
 <!-- nav ends -->
-<button><a href="#">Create A New Political Party</a></button>
+
+
+<!-- Modal starts here -->
+
+  
+  <div class="modal-container" id="modal">
+    <div class="modal">
+       <a href="#" class="close">X</a>
+      <span class="modal-heading">
+        CREATE NEW POLITICAL PARTY
+      </span>
+      <form action="#">
+          <input type="text" placeholder="Name of the Political Party" required><br>
+        <input type="text" placeholder="Party Acronym" required><br>
+        <input type="submit" class="btnRegister" value="Submit">
+      </form>
+  </div>
+</div>
+<!-- Modal ends here -->
+ <button class="btn"><a href="#modal" class="registerlink">Create New Party</a></button>
+<!-- Edit Form Modal -->
+    <div class="modal-container" id="modalTwo">
+        <div class="modal">
+           <a href="#" class="close">X</a>
+          <span class="modal-heading">
+            EDIT POLITICAL PARTY
+          </span>
+          <form action="#">
+              <input type="text" placeholder="Name of the Political Party" required><br>
+            <input type="text" placeholder="Party Acronym" required><br>
+            <input type="submit" class="btnRegister" value="Submit">
+          </form>
+  </div>
+</div>
+<!-- Edit form Modal ends here -->
+
 <div class="wrapper">
-    <div>
-        <h2>LIST OF POLITICAL PARTIES</h2>
+        <h2>POLITICAL PARTIES</h2>
         <table>
+            <thead>
             <tr>
-                <th>Party Full-Name</th>
-                <th>Party Acronym</th>
-                <th>Edit/Delete</th>
+                <th>Name</th>
+                <th>Acronym</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Accord</td>
+                <td>A</td>
+                <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
-                <td>Action Congress</td>
-                <td>AC</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
-            <tr>
-                <td>Labour Party</td>
-                <td>LP</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
-            <tr>
-                <td>Peoples' Democratic Party</td>
-                <td>PDP</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
-            <tr>
-                <td>Progressive Peoples Alliance</td>
-                <td>PPA</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
+                <td>Action Alliance</td>
+                <td>AA</td>
+                <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
                 <td>All Progressive Congress</td>
                 <td>APC</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
-            <tr>
-                <td>Accord</td>
-                <td>A</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
-            <tr>
-                <td> Action Alliance</td>
-                <td>AA</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
+                <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
                 <td> Action Peoples Party </td>
                 <td>APP</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
+                <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
-                <td> Advanced Congress of Democrats </td>
-                <td>ACD</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
+                <td>Peoples' Democratic Party</td>
+                <td>PDP</td>
+                <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
-            <tr>
-                <td> Action Peoples Party </td>
-                <td>APP</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
-            <tr>
-                <td> Action Peoples Party </td>
-                <td>APP</td>
-                <td><button class="spacer"><a href="edit.html">Edit</a></button><button>Delete</button></td>
-            </tr>
+            </tbody>
         </table>
-    </div>
+       
+
 </div>

@@ -1,124 +1,389 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  button{
-      margin-top: 20px;
-      background: #11122b;
-      padding: 15px 20px;
-  }
-  button a{
-    text-decoration: none;
-    font-size: 16px;
-    outline: none;
+  margin: 0;
+  padding: 0;
 }
-  
-  nav {
-    width: 100%;
-    height: 60px;
-    background: wheat;
-  }
-  nav p {
-    font-family: arial;
-    color: #222;
-    font-size: 24px;
-    line-height: 55px;
-    float: left;
-    padding: 0 20px;
-  }
-  
-  nav ul {
-    float: left;
-  }
-  nav ul li {
-    float: left;
-    list-style: none;
-    position: relative;
-  }
-  
-  nav ul li a{
-    text-decoration: none;
-    display: block;
-    font-family: arial;
-    padding:22px 14px;
-    color: #222;
-    font-size: 16px;
-    
-  }
-  /* DropDown */
-  nav ul li ul {
-    display: none;
-    position: absolute;
-    background: #11122b;
-    padding: 8px;
-    border-radius: 0 0 4px 4px;
-  }
-  
-  nav ul li:hover ul {
-    display: block;
-  }
-  nav ul li ul li {
-    width: 100px;
-    border-radius: 4px;
-  }
-  nav ul li a {
-    
-    color: #fff;
-  }
-  
-  nav ul li ul li a{
-    padding: 8px 14px;
-   }
-  
-  nav ul li ul li a:hover {
-    background: wheat;
-    
-  }
-  
-  i{
-    font-size: 20px;
-    margin-left: 3px;
-  }
-  
-  
-  i{
-    font-size: 20px;
-    margin-left: 3px;
-  }
 
-  /* Political Parties Page */
-.wrapper {
-   
+body {
+  background: #009199;
 }
-.wrapper h2{
-    text-align: left;
-    margin-top: 25px;
+
+/*Nav*/
+
+nav {
+  width: 100%;
+  height: 60px;
+  background: #11122b;
 }
+nav p {
+ font-family: 'Monoton', cursive;
+  color: wheat;
+  font-size: 2rem;
+  line-height: 55px;
+  float: left;
+  padding: 0 20px;
+  letter-spacing: 3px;
+  margin-right: 600px;
+}
+nav p:hover {
+  color: #fff;
+}
+
+nav ul {
+  float: left;
+}
+nav ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li a{
+  text-decoration: none;
+  display: block;
+  font-family: arial;
+  padding:22px 14px;
+  color: #11122b;
+  font-size: 16px;
+  
+}
+
+/* DropDown */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background:  #02657f;
+  padding: 8px;
+  border-radius: 0 0 4px 4px;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+nav ul li ul li {
+  width: 100px;
+  border-radius: 4px;
+}
+nav ul li a {
+  
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: wheat;
+}
+nav ul li ul li a{
+  padding: 8px 14px;
+ }
+
+nav ul li ul li a:hover {
+  background: #11122b;
+  
+}
+
+i{
+  font-size: 25px;
+  margin-left: 2px;
+}
+
+/*Nav ends here*/
+
+button{
+    /*margin-top: 2px;*/
+    background: #11122b;
+    /*padding: 3px 5px;*/
+    margin-right: 5px;
+}
+button a{
+  text-decoration: none;
+  font-size: 12px;
+  outline: none;
+  color: #11122b;
+}
+
+
+/*select dropdown*/
+select {
+outline: none;
+font-size: 14px;
+letter-spacing: 1px;
+color: #000;
+padding: 5px;
+width: 100%;
+border: 1px solid wheat;
+box-sizing: border-box;
+margin-bottom: 12px;
+font-size: 16px;
+}
+
+.vote{
+margin: 0px auto;
+}
+.vote {
+max-width: 350px;
+margin: 0 auto;
+padding: 10px;
+box-sizing: border-box;
+}
+
+.vote label {
+font-family: cursive;
+}
+/* Political Parties Page */
+
+.wrapper h2, .history {
+  text-align: center;
+  margin-top: 25px;
+  color: #11122b;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.btn {
+background: #11122b;
+margin-left: 10px;
+}
+
 /* table */
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 70%;
-  }
-  
-  td, th {
-    border: 2px solid wheat;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: wheat;
-    color: #11122b;
+table { 
+width: 80%; 
+border-collapse: collapse;
+margin: 0 auto; 
 }
-.spacer{
-    margin-left: 2px;
-    margin-right: 20px;
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+background: #eee; 
+}
+th { 
+background: #11122b; 
+color: white; 
+font-size: 16px; 
+}
+td, th { 
+padding: 10px; 
+border: 1px solid #ccc; 
+text-align: center; 
 }
 
 button {
-    padding: 5px 10px;
-    background: #fff;
-    color: #11122b;
-    outline: none;
+  padding: 10px 15px;
+  background: #0097a7;
+   outline: none;
+  border: 1px solid #11122b;
+  border-radius: 2px;
+}
+
+/* Modal Form */
+.register {
+margin: 50px auto;
+display: block;
+width: 180px;
+height: 58px;
+border: 1px solid white;
+background-color: #11122b;
+color: white;
+font-family: san-serif;
+font-weight: bold;
+border-radius: 5px;
+transition: background-color 1000ms, color 1000ms;
+}
+.regsiter:hover {
+background-color: rgba(255, 255, 255, 1);
+color: #222;
+cursor: pointer;
+transition: background-color 1000ms, color 1000ms;
+}
+.registerlink{
+text-decoration: none;
+display: inline-block;
+padding: 5px;
+color: white;
+transition: color 1000ms;
+}
+
+.modal-container{
+width: 100%;
+height: 100%;
+position: fixed;
+pointer-events: none;
+opacity:0;
+transition: all 500ms ease;
+}
+.modal-container:target{
+opacity: 1;
+pointer-events:auto;
+}
+.modal-container > div{
+transform: translate(0px, 0px);
+transition: all 500ms ease;
+}
+.modal-container:target > div{
+transform: translate(0px, 0px);
+}
+.modal {
+width: 300px;
+height: 300px;
+margin: auto;
+position: absolute;
+top:0px; bottom:0px;
+right:0px; left: 0px;
+background: #0097a7;
+border: 1px solid #fff;
+border-radius: 5px;
+padding: 20px;
+box-shadow: 0px 0px 50px 5px black;
+}
+
+.modal-heading{
+width: 100%;
+display: block;
+height: 30px;
+margin-top: 20px;
+color: #fff;
+padding: 2px;
+box-sizing: border-box;
+text-align: center;
+font-size: 16px;
+font-family: big john;
+/*border-bottom: 1px solid #fefefe;*/
+}
+input {
+margin-bottom: 15px;
+padding: 10px;
+width: 100%;
+box-sizing: border-box;
+border-radius: 5px;
+height: 40px;
+border: 0px;
+font-family: georgia;
+text-align: center;
+}
+.btnRegister{
+background: #11122b;
+color: white;
+font-size: 15pt;
+margin-top: 10px;
+}
+.close {
+color: #fff;
+position: absolute;
+border: 1px solid #333;
+padding: 7px 9px 11px 9px;
+background: #000;
+text-decoration: none;
+top: -20px;
+right: -20px;
+border-radius: 50%;
+transition: background 500ms;
+}
+
+.close:hover {
+background: #444;
+cursor: pointer;
+}
+
+.login-in{
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 70px;
+  box-sizing: border-box;
+  color: #11122b;
+  font-size: 18px;
+  font-family: 'Rale#0a165dway', sans-serif;
+}
+
+
+input[type=submit] {
+width: 100%;
+font-weight: bold;
+background: #11122b;
+border: none;
+margin: 3em 0 1.5em;
+outline: none;
+letter-spacing: 1px;
+font-size: 15px;
+padding: 14px 0;
+color: #fff;
+cursor: pointer;
+}
+
+/* Modal Form ends here */
+/* media query */
+@media(max-width: 768px) {
+  
+  nav {
+  width: 100%;
+  height: 100px;
+  background: #11122b;
+}
+  ul li{
+      display: block;
+      text-align: left;
+  }
+
+  input[type=submit] {
+      width: 100%;
+  }
+  
+}
+
+@media(max-width: 768px) {
+  
+  ul {
+      width: 100%;
+      display: block;
+  }
+  ul li{
+      display: block;
+      text-align: left;
+  }
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+/* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr { 
+  display: block; 
+  text-align: left;
+}
+
+table {
+  width: 100%;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr { 
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+tr { border: 1px solid #ccc; }
+
+td { 
+  /* Behave  like a "row" */
+  border: none;
+  border-bottom: 1px solid #eee; 
+  position: relative;
+  padding-left: 50%; 
+}
+
+td:before { 
+  /* Now like a table header */
+  position: absolute;
+  /* Top/left values mimic padding */
+  top: 6px;
+  left: 6px;
+  width: 45%; 
+  padding-right: 10px; 
+  white-space: nowrap;
+}
+td:nth-of-type(1):before { content: ""; }
+td:nth-of-type(2):before { content: "Accord"; }
+td:nth-of-type(3):before { content: "Action Alliance"; }
+td:nth-of-type(4):before { content: "All Progressive Congress"; }
+td:nth-of-type(5):before { content: "Action Peoples Party"; }
+td:nth-of-type(6):before { content: "Peoples Democratic Party"; }
 }
