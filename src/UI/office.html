@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>List Of Political Offices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/admin.css" />
+        
+    </head>
+<body>
+	<!-- Nav -->
+<nav>
+        <p>POLITICO</p>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="adminDashboard.html">Dashboard<i class="fas fa-caret-down"></i></a>
+                <ul>
+                    <li><a href="party.html">Political Parties</a></li>
+                    <li><a href="adminDashboard.html">Election Result</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav><br><br>
+<!-- nav ends -->
+	<!-- Edit Form Modal -->
+	
+	    <div class="modal-container" id="modalThree">
+	        <div class="modal">
+	           <a href="#" class="close">X</a>
+	          <span class="modal-heading">
+	            EDIT POLITICAL OFICE
+	          </span>
+	          <form action="#">
+	              <input type="text" placeholder="Name of the Political Office" required>
+	            <input type="submit" class="btnRegister" value="Submit">
+	          </form>
+	  		</div>
+		</div>
+	<!-- Edit form Modal ends here -->
+ <button class="btn"><a href="#modalFour" class="registerlink">Create New Office</a></button>
+	<!-- MOdal Four starts here -->
+
+		    <div class="modal-container" id="modalFour">
+		        <div class="modal">
+		           <a href="#" class="close">X</a>
+		          <span class="modal-heading">
+		            CREATE POLITICAL OFICE
+		          </span>
+		          <form action="#">
+		              <input type="text" placeholder="Name of the Political Office" id="createParty" required>
+		            <input type="submit" class="btnRegister" value="Submit">
+		          </form>
+		  </div>
+		</div>
+	<!-- Modal Four ends here -->
+	
+	<div class="wrapper">
+		<h2>POLITICAL OFFICES</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Office</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Presidential</td>
+                    
+                    <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Governorship</td>
+                    <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>House Of Rep</td>
+                    <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Local Goverment Chairman</td>
+                    <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Councillor</td>
+                    <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
