@@ -18,7 +18,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="usersignin.html">SignIn</a></li>
                 <li><a href="usersignup.html">SignUp</a></li>
-                <li><a href="adminsignin.html">Admin</a></li>
             </ul>
         </nav>
         <!-- navigation ends here -->
@@ -26,10 +25,26 @@
     <div class="login-in">
             <h1>Sign-up</h1>
         <form action="" method="POST">
-            <label for="email">Email</label>
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName"  id="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName"  id="lastName" required>
+            <label for="otherName">Other Name:</label>
+            <input type="text" name="otherName"  id="otherName" required>
+            <label for="email">Email:</label>
             <input type="email" name="email"  id="signupEmail" required>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="signupPassword" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password"  id="signupPassword" required>
+            <label for="phone">Phone Number:</label>
+            <input type="number" name="phone"  id="phoneNumber" required>
+            <label for="passport">Passport Url:</label>
+            <input type="text" name="passport"  id="passportUrl" required>
+            <label for="admin">Admin?:</label>
+            <select name="admin" id="admin" required>
+                <option value="">Select</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
             <br>
             <input type="submit" value="Sign-up">
         </form>
