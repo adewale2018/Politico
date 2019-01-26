@@ -36,7 +36,15 @@
 	            EDIT POLITICAL OFICE
 	          </span>
 	          <form action="#">
-	              <input type="text" placeholder="Name of the Political Office" required>
+                  <input type="text" placeholder="Name of the Political Office" required>
+                  <label for="officeType">Office Type</label>
+                   <select name="officeType" id="officeType" required>
+                       <option value="">Select</option>
+                       <option value="Federal">Federal</option>
+                       <option value="legislative">Legislative</option>
+                       <option value="state">State</option>
+                       <option value="localgovt">Local Goverment</option>
+                   </select>
 	            <input type="submit" class="btnRegister" value="Submit">
 	          </form>
 	  		</div>
@@ -52,7 +60,15 @@
 		            CREATE POLITICAL OFICE
 		          </span>
 		          <form action="#">
-		              <input type="text" placeholder="Name of the Political Office" id="createParty" required>
+                    <input type="text" placeholder="Name of the Political Office" id="createParty" required>
+                    <label for="officeType">Office Type</label>
+                   <select name="officeType" id="officeType" required>
+                       <option value="">Select</option>
+                       <option value="Federal">Federal</option>
+                       <option value="legislative">Legislative</option>
+                       <option value="state">State</option>
+                       <option value="localgovt">Local Goverment</option>
+                   </select>
 		            <input type="submit" class="btnRegister" value="Submit">
 		          </form>
 		  </div>
@@ -64,30 +80,36 @@
         <table>
             <thead>
                 <tr>
-                    <th>Office</th>
+                    <th>Office Name</th>
+                    <th>Office Type</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Presidential</td>
+                    <td>Federal</td>
                     
                     <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
                 </tr>
                 <tr>
                     <td>Governorship</td>
+                    <td>State</td>
                     <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
                 </tr>
                 <tr>
                     <td>House Of Rep</td>
+                    <td>Legislative</td>
                     <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
                 </tr>
                 <tr>
                     <td>Local Goverment Chairman</td>
+                    <td>Local Goverment</td>
                     <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
                 </tr>
                 <tr>
                     <td>Councillor</td>
+                    <td>Local Goverment</td>
                     <td><button class="spacer"><a href="#modalThree">Edit</a></button><button>Delete</button></td>
                 </tr>
             </tbody>
