@@ -43,8 +43,9 @@
       </span>
       <form action="#">
         <input type="text" placeholder="Name of the Political Party" required><br>
-        <input type="text" placeholder="Headquater Address" required><br>
+        <input type="number" placeholder="Party Code" required><br>
         <input type="text" placeholder="Logo Url" required><br>
+        <input type="text" placeholder="Headquater Address" required><br>
         <input type="submit" class="btnRegister" value="Submit">
       </form>
   </div>
@@ -59,8 +60,10 @@
             EDIT POLITICAL PARTY
           </span>
           <form action="#">
-              <input type="text" placeholder="Name of the Political Party" required><br>
+            <input type="text" placeholder="Name of the Political Party" required><br>
+            <input type="number" placeholder="Party Code" required><br>
             <input type="text" placeholder="Logo Url" required><br>
+            <input type="text" placeholder="Headquater Address" required><br>
             <input type="submit" class="btnRegister" value="Submit">
           </form>
   </div>
@@ -73,6 +76,7 @@
             <thead>
             <tr>
                 <th>Name</th>
+                <th>Code</th>
                 <th>Logo</th>
                 <th>Headquater Address</th>
                 <th></th>
@@ -81,30 +85,35 @@
             <tbody>
             <tr>
                 <td>Accord</td>
+                <td>010</td>
                 <td><img src="./img/accord.png" alt="accord Logo" class="logo"></td>
                 <td>Plot 488 , 7 Yauri Street, Area 3, Garki Abuja</td>
                 <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
                 <td>Action Alliance</td>
+                <td>090</td>
                 <td><img src="./img/aa.jpg" alt="action alliance logo" class="logo"></td>
                 <td>Plot 1977 Orlu Street, Area 3, Garki, Abuja.</td>
                 <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
                 <td>All Progressive Congress</td>
+                <td>070</td>
                 <td><img src="./img/apc.png" alt="apc logo" class="logo"></td>
                 <td>No. 40 Blantyre Street, Wuse II, Abuja</td>
                 <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
                 <td> Action Peoples Party </td>
+                <td>040</td>
                 <td><img src="./img/app.png" alt="action party logo" class="logo"></td>
                 <td>No. 12, Ogboriefon Plaza, Okuigbe, Abuja</td>
                 <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
             </tr>
             <tr>
                 <td>Peoples' Democratic Party</td>
+                <td>035</td>
                 <td><img src="./img/pad.png" alt="pdp logo" class="logo"></td>
                 <td>Wadata Plaza , Michael Okpara Way , Zone 5, Wuse, Abuja</td>
                 <td><button class="spacer"><a href="#modalTwo">Edit</a></button><button>Delete</button></td>
