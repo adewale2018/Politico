@@ -22,7 +22,7 @@ nav p {
   float: left;
   padding: 0 20px;
   letter-spacing: 3px;
-  margin-right: 600px;
+  margin-right: 700px;
 }
 nav p:hover {
   color: #fff;
@@ -141,7 +141,8 @@ font-family: cursive;
 }
 .btn {
 background: #11122b;
-margin-left: 10px;
+margin-left: 1200px;
+display: inline;
 }
 
 /* table */
@@ -160,11 +161,16 @@ color: white;
 font-size: 16px; 
 }
 td, th { 
-padding: 10px; 
+padding: 3px 6px; 
 border: 1px solid #ccc; 
 text-align: center; 
 }
 
+.logo {
+  border: 1px solid #11122b;
+  width: 20%;
+  border-radius: 50%;
+}
 button {
   padding: 10px 15px;
   background: #0097a7;
@@ -248,7 +254,7 @@ font-family: big john;
 /*border-bottom: 1px solid #fefefe;*/
 }
 input {
-margin-bottom: 15px;
+margin-bottom: 10px;
 padding: 10px;
 width: 100%;
 box-sizing: border-box;
@@ -286,11 +292,11 @@ cursor: pointer;
   max-width: 350px;
   margin: 0 auto;
   padding: 20px;
-  margin-top: 70px;
+  margin-top: 50px;
   box-sizing: border-box;
   color: #11122b;
-  font-size: 18px;
-  font-family: 'Rale#0a165dway', sans-serif;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -299,7 +305,7 @@ width: 100%;
 font-weight: bold;
 background: #11122b;
 border: none;
-margin: 3em 0 1.5em;
+margin: 1.5em 0 1.5em;
 outline: none;
 letter-spacing: 1px;
 font-size: 15px;
@@ -380,10 +386,10 @@ td:before {
   padding-right: 10px; 
   white-space: nowrap;
 }
-td:nth-of-type(1):before { content: ""; }
+/* td:nth-of-type(1):before { content: ""; }
 td:nth-of-type(2):before { content: "Accord"; }
 td:nth-of-type(3):before { content: "Action Alliance"; }
 td:nth-of-type(4):before { content: "All Progressive Congress"; }
 td:nth-of-type(5):before { content: "Action Peoples Party"; }
 td:nth-of-type(6):before { content: "Peoples Democratic Party"; }
-}
+} */
