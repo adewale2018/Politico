@@ -1,14 +1,13 @@
 
 html {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: Arial, Helvetica, sans-serif;
-    color: #333;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: #009199;
+    background: #fed766;
 }
 /* Styling of nav starts here */
 nav {
@@ -24,14 +23,14 @@ ul {
 ul li {
     list-style: none;
     display: inline-block;
-    padding: 20px;
+    padding: 15px;
   
 }
 
 ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1rem;
     
 }
 
@@ -42,27 +41,27 @@ ul li a:hover {
 
 
 #brand{
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-family: 'Monoton', cursive;
-    font-weight: 400;
+    font-weight: 300;
     color: wheat;
     letter-spacing: 3px;
 }
 #quote{
-    margin-right: 310px;
+    margin-right: 500px;
 }
 span {
     color: #fff;
     font-family: 'Marck Script', cursive;
 }
 #brand:hover {
-    color: wheat;
+    color: #fff;
 }
 /* Styling of nav ends here */
 
 /* Styling of homepage container starts here */
 .container {
-    height: 86.3vh; 
+    height: 92vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +74,7 @@ span {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding: 10px;
-    font-size:2em;
+    font-size:1.5em;
     letter-spacing: 1px;
 }
 /* Styling of homepage container ends here */
@@ -84,20 +83,21 @@ span {
 /* LOGIN FORM STYLE starts here */
 .login-in{
     max-width: 350px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 20px;
+    margin: 100px auto;
+    padding: 15px;
     box-sizing: border-box;
     color: #11122b;
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
 }
-
+#spacer {
+    margin-bottom: 100px;
+}
 .login-in h1{
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
-  color: whitesmoke;
-  font-size: 16px;
+  color: #11122b;
+  font-size: 18px;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
@@ -110,7 +110,10 @@ input[type=email], input[type=text], input[type=number], select, input[type=pass
   width: 100%;
   border: 1px solid #11122b;
   box-sizing: border-box;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 8px;
+  box-shadow: 0 0 20px #000000b3;
+  border-radius: 10px;
 }
 
 
@@ -126,6 +129,7 @@ input[type=submit] {
   padding: 14px 0;
   color: #fff;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 a {
@@ -152,3 +156,26 @@ a {
     input[type=submit] {
         width: 100%;
     }
+    .login-in{
+        max-width: 350px;
+        margin: 250px auto;
+        padding: 10px;
+       
+        box-sizing: border-box;
+        color: #11122b;
+        font-size: 12px;
+        font-family: 'Raleway', sans-serif;
+    }
+    input[type=email], input[type=text], input[type=number], select, input[type=password] {
+        outline: none;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #000;
+        padding: 4px 4px 3px 3px;
+        width: 100%;
+        border: 1px solid #11122b;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+    
+}
