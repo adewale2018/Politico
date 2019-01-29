@@ -7,7 +7,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fed766;
+    /* background: #fed766; */
 }
 /* Styling of nav starts here */
 nav {
@@ -30,7 +30,7 @@ ul li {
 ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.8rem;
     
 }
 
@@ -70,12 +70,13 @@ span {
     background-size: cover;
 }
 .container p {
-    color: #487d05;
+    color: #a300ff;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding: 10px;
-    font-size:1.5em;
+    font-size: 2em;
     letter-spacing: 1px;
+    line-height: 50px;
 }
 /* Styling of homepage container ends here */
 
@@ -84,11 +85,15 @@ span {
 .login-in{
     max-width: 350px;
     margin: 100px auto;
-    padding: 15px;
+    padding: 30px;
     box-sizing: border-box;
     color: #11122b;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Raleway', sans-serif;
+    border: 1px solid gray;
+    box-shadow:0px 5px 10px gray;
+    border-radius: 8px;
+    font-weight: 200;
 }
 #spacer {
     margin-bottom: 100px;
@@ -103,16 +108,16 @@ span {
 }
 input[type=email], input[type=text], input[type=number], select, input[type=password] {
   outline: none;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 1px;
-  color: #000;
+  color: #a300ff;
   padding: 6px 6px 5px 5px;
   width: 100%;
-  border: 1px solid #11122b;
+  border: 1px solid #000;
   box-sizing: border-box;
   margin-bottom: 15px;
   margin-top: 8px;
-  box-shadow: 0 0 20px #000000b3;
+  box-shadow: 0 0 6px #000000b3;
   border-radius: 10px;
 }
 
