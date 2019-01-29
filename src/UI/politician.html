@@ -17,7 +17,7 @@
 	        <p>POLITICO</p>
 	        <ul>
 	            <li><a href="index.html">Homepage</a></li>
-	            <li><a href="result.html">Dashboard<i class="fas fa-caret-down"></i></a>
+	            <li><a href="result.html">Dashboard</a></i>
 	                <ul>
 	                	 <li><a href="user.html">Vote</a></li>
 	                    <li><a href="parties.html">Political Parties</a></li>
@@ -33,14 +33,24 @@
 	<div class="login-in">
 	        <h2>Register</h2><br>
 	    <form action="" method="POST">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="" required>
-			<label for="number">Candidate ID</label>
-	        <input type="number" name="number" id="" required>
-	        <label for="partyName">Office</label>
-			<input type="text" name="Office" id="" required>
-			<label for="party">Party</label>
-	        <input type="text" name="party"  id="" required>
+			<label>Party</label><br>
+			<select name="party" required>
+				<option value="">Select an option</option>
+				<option value="Accord">Accord(A)</option>
+				<option value="Action Alliance">Action Alliance(AA)</option>
+				<option value="All Progressive Congress">All Progressive Congress(APC)</option>
+				<option value="Action Peoples Party">Action Peoples Party(APP)</option>
+				<option value="Peoples Democratic Party">Peoples' Democratic Party(PDP)</option>
+			</select><br>
+			<label>Office</label><br>
+			<select name="office" required>
+					<option value="">Select an option</option>
+					<option value="Presidential">Presidential</option>
+					<option value="governorship">Governorship</option>
+					<option value="house of rep">House of Assembly</option>
+					<option value="local-govt">Local Government</option>
+					<option value="councillor">Councillorship</option>
+				</select><br>	
 	        <input type="submit" value="Submit">
 
 	    </form>
