@@ -98,7 +98,7 @@ span {
 #spacer {
     margin-bottom: 100px;
 }
-.login-in h1{
+.login-in h1, h2{
   text-align: center;
   text-transform: uppercase;
   color: #11122b;
