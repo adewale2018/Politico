@@ -22,6 +22,10 @@ app.use(expressValidator());
 
 app.use('/api/v1', route);
 
+app.get('/', (req, res) => res.status(200).json({ home: 'Politico home'}));
+
 app.listen(process.env.PORT, () => console.log(
- `Your Server is connected and running on PORT ${process.env.PORT}`
+  `Your Server is connected and running on PORT ${process.env.PORT}`
 ));
+
+module.exports = app;

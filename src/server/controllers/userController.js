@@ -10,10 +10,6 @@ const file = JSON.parse(
 
 export default {
 
-  home: async (req, res) => res.status(200).json(
-    { home: 'Welcome home', success: true },
-  ),
-
   adminSignUp: async (req, res) => {
     const {
       firstname, lastname, othername, email,
