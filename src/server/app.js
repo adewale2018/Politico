@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
-
+import expressValidator from 'express-validator';
 
 import route from './routes';
 
@@ -18,6 +18,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressValidator());
 
 app.use('/api/v1', route);
 
