@@ -3,7 +3,7 @@ import fs from 'fs';
 import Models from '../models';
 
 
-const file = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/index.json'), 'utf8'));
+const file = JSON.parse(fs.readFileSync(path.join(__dirname, '../datastore/index.json'), 'utf8'));
 
 export default {
 
@@ -12,27 +12,15 @@ export default {
   adminSignUp: async (req, res) => {
     const {
       firstname, lastname, othername, email,
-      phoneNumber, password, passportUrl } = req.body;
-    // const { passportUrl } = req.file;
-    // console.log(passportUrl, '>>>>>>>');
-
-    let userId = file.users.length;
-    userId += 1;
+      phoneNumber, passportUrl, password,
+    } = req.body;
+    let id = file.users.length;
+    id += 1;
+    const isAdmin = false;
     let user;
-    let passport;
-    // try {
-    //   passport = await helpers.cloudinary(passportUrl);
-    //   console.log(passport, '>>>>>>');
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
     try {
-      user = new Models(
-        userId, firstname, lastname, othername,
-        email, phoneNumber, passport, password,
-      );
-      user = await user.save();
+      const userModel = new Models(id, firstname, email, lastname, othername, phoneNumber, passportUrl, password, isAdmin);
+      user = await userModel.save();
       return res.status(201).json({
         status: true,
         data: [user],
@@ -40,7 +28,7 @@ export default {
     } catch (error) {
       return res.status(400).json({
         status: false,
-        data: 'error',
+        data: error,
       });
     }
   },
