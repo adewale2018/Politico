@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import Models from '../models';
+// import Models from '../models';
 
 
 const file = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/index.json'), 'utf8'));
@@ -12,27 +12,15 @@ export default {
   adminSignUp: async (req, res) => {
     const {
       firstname, lastname, othername, email,
-      phoneNumber, password, passportUrl } = req.body;
-    // const { passportUrl } = req.file;
-    // console.log(passportUrl, '>>>>>>>');
-
-    let userId = file.users.length;
-    userId += 1;
+      phoneNumber, passportUrl, password,
+    } = req.body;
+    const id = 2;
+    const isAdmin = false; 
     let user;
-    let passport;
-    // try {
-    //   passport = await helpers.cloudinary(passportUrl);
-    //   console.log(passport, '>>>>>>');
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
     try {
-      user = new Models(
-        userId, firstname, lastname, othername,
-        email, phoneNumber, passport, password,
-      );
-      user = await user.save();
+      user = await {
+        id, firstname, lastname, othername, email, phoneNumber, passportUrl, isAdmin,
+      };
       return res.status(201).json({
         status: true,
         data: [user],
@@ -40,7 +28,7 @@ export default {
     } catch (error) {
       return res.status(400).json({
         status: false,
-        data: 'error',
+        data: error,
       });
     }
   },
