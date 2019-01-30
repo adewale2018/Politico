@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-export default class Models {
+export default class Users {
   constructor(id, firstname, email, lastname,
     othername, phoneNumber, passportUrl, password, isAdmin) {
     this.id = id;
@@ -44,7 +44,7 @@ export default class Models {
         const db = JSON.parse(file);
         db.users.push(newInstance);
         fs.writeFileSync(
-          path.join(__dirname, '../database/index.json'),
+          path.join(__dirname, '../datastore/index.json'),
           JSON.stringify(db), (err) => {
             if (err) return;
           },
