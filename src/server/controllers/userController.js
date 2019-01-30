@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs';
-// import Models from '../models';
+import Models from '../models';
 
 
-const file = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/index.json'), 'utf8'));
+const file = JSON.parse(fs.readFileSync(path.join(__dirname, '../datastore/index.json'), 'utf8'));
 
 export default {
 
@@ -14,13 +14,13 @@ export default {
       firstname, lastname, othername, email,
       phoneNumber, passportUrl, password,
     } = req.body;
-    const id = 2;
-    const isAdmin = false; 
+    let id = file.users.length;
+    id += 1;
+    const isAdmin = false;
     let user;
     try {
-      user = await {
-        id, firstname, lastname, othername, email, phoneNumber, passportUrl, isAdmin,
-      };
+      const userModel = new Models(id, firstname, email, lastname, othername, phoneNumber, passportUrl, password, isAdmin);
+      user = await userModel.save();
       return res.status(201).json({
         status: true,
         data: [user],
