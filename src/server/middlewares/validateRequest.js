@@ -82,7 +82,7 @@ const validateRequestBody = (request) => {
         case 'othername':
           request.check(
             'othername',
-            'othername field cannot be empty'
+            'othername field cannot be empty',
           )
             .trim()
             .notEmpty();
@@ -92,6 +92,23 @@ const validateRequestBody = (request) => {
           request.check(
             'othername',
             'othername should contain only alphabets',
+          )
+            .trim()
+            .matches(/\w/);
+          break;
+        case 'name':
+          request.check(
+            'name',
+            'name field cannot be empty',
+          )
+            .trim()
+            .notEmpty();
+          request.check('name', 'name must be more than 5 characters')
+            .trim()
+            .isLength(5, 100);
+          request.check(
+            'name',
+            'name should contain only alphabets',
           )
             .trim()
             .matches(/\w/);
@@ -116,6 +133,39 @@ const validateRequestBody = (request) => {
             .trim()
             .matches(/\w/);
           break;
+        
+        case 'logoUrl':
+          request.check(
+            'logoUrl',
+            'logoUrl field cannot be empty',
+          )
+            .trim()
+            .notEmpty();
+          request.check(
+            'logolUrl',
+            'logoUrl must not be more than 50 characters',
+          )
+            .isLength({ max: 50 });
+          request.check(
+            'logoUrl',
+            'logoUrl should contain only alphabets',
+          )
+            .trim()
+            .matches(/\w/);
+          break;
+
+        case 'hqAddress':
+          request.check('hqAddress', 'hqAddress field cannot be empty')
+            .trim()
+            .notEmpty();
+          request.check(
+            'hqAddress',
+            'hqAddress length must be more than 6 characters',
+          )
+            .trim()
+            .isLength({ max: 100 });
+          break;
+
         case 'phoneNumber':
           request.check(
             'phoneNumber',
