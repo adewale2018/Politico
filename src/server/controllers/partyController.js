@@ -43,5 +43,25 @@ export default {
         data: error,
       });
     }
+  },
+
+  getParty: async (req, res) => {
+    let party;
+    try {
+      party = new Parties(req.params.id);
+      const result = await party.getParty();
+      return res.status(200).json({
+        status: 200,
+        data: result,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        data: error,
+      });
+    }
+    
   }
 };
+
+

@@ -7,12 +7,14 @@ dotenv.config();
 
 
 export default class Parties {
-  constructor(id, userId, name, hqAddress, logoUrl) {
-    this.id = id;
-    this.userId = userId;
-    this.name = name;
-    this.hqAddress = hqAddress;
-    this.logoUrl = logoUrl; 
+  constructor(id=6, userId = 4, name = 'Bolu', 
+    hqAddress = '12, Inanapaja, Lagos', 
+    logoUrl = 'https://www.url.com') {
+      this.id = id;
+      this.userId = userId;
+      this.name = name;
+      this.hqAddress = hqAddress;
+      this.logoUrl = logoUrl; 
   }
 
   save() {
@@ -29,5 +31,10 @@ export default class Parties {
         resolve(newInstance);
       }, 100);
     });
+  }
+
+  getParty() {
+    const party = db.party.filter(item => item.id == this.id);
+    return party;
   }
 }
