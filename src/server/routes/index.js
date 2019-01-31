@@ -10,6 +10,7 @@ const route = express.Router();
 
 route.post('/signup', validateRequest, UserController.adminSignUp);
 route.post('/parties', validateRequest, PartyController.createParty);
+route.get('/parties', PartyController.getParties);
 
 
 export default route;
