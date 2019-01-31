@@ -84,5 +84,8 @@ export const mockData =  {
       hqAddress: "12, Obanikoro Lagos, Nigeria", 
       logoUrl: "https://www.adewale.com"
     },
+    editParties: {
+      name: 'Boluwatife'
+    }
   }
 };

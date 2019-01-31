@@ -90,5 +90,15 @@ describe('Politico user controller', () => {
         done();
       });
   });
+  it('should return 200 on successful update of a specific political party', (done) => {
+    chai.request(app)
+      .patch('/api/v1/parties/1/name')
+      .set('Content-Type', 'application/json')
+      .send(user.editParties)
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(user.editParties.name, res.body.data[0].name);
+        done();
+      });
+  });
 });
-

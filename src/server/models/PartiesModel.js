@@ -7,7 +7,7 @@ dotenv.config();
 
 
 export default class Parties {
-  constructor(id=6, userId = 4, name = 'Bolu', 
+  constructor(id=6, name = 'Bolu', userId = 4,  
     hqAddress = '12, Inanapaja, Lagos', 
     logoUrl = 'https://www.url.com') {
       this.id = id;
@@ -35,6 +35,14 @@ export default class Parties {
 
   getParty() {
     const party = db.party.filter(item => item.id == this.id);
+    return party;
+  }
+
+  patchParty() {
+    let party = db.party.filter(item => item.id == this.id);
+    const index = db.party.indexOf(party[0]);
+    party[0].name = this.name;
+    db.party[index] = party;
     return party;
   }
 }

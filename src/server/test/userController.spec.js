@@ -117,5 +117,4 @@ describe('Politico user controller', () => {
         done();
       });
   })
-
 });

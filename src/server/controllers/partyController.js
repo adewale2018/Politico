@@ -14,7 +14,7 @@ export default {
     let party;
     try {
       const partyModel = new Parties(
-        id, userId, name, hqAddress, logoUrl,
+        id, name, userId, hqAddress, logoUrl,
       );
       party = await partyModel.save();
       return res.status(201).json({
@@ -61,7 +61,22 @@ export default {
       });
     }
     
-  }
+  },
+
+  editParty: async (req, res) => {
+    let party;
+    try {
+      party = new Parties(req.params.id, req.body.name);
+      const result = await party.patchParty();
+      return res.status(200).json({
+        status: 200,
+        data: result,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        data: error,
+      });
+    }
+  },
 };
-
-

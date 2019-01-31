@@ -12,6 +12,7 @@ route.post('/signup', validateRequest, UserController.adminSignUp);
 route.post('/parties', validateRequest, PartyController.createParty);
 route.get('/parties', PartyController.getParties);
 route.get('/party/:id', PartyController.getParty);
+route.patch('/parties/:id/name', validateRequest, PartyController.editParty);
 
 
 export default route;
