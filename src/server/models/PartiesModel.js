@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
+import db from '../datastore';
 
 dotenv.config();
 
@@ -24,17 +25,7 @@ export default class Parties {
           hqAddress: this.hqAddress,
           logoUrl: this.logoUrl,
         };
-        const file = fs.readFileSync(
-          path.join(__dirname, '../datastore/index.json'), 'utf8',
-        );
-        const db = JSON.parse(file);
         db.party.push(newInstance);
-        fs.writeFileSync(
-          path.join(__dirname, '../datastore/index.json'),
-          JSON.stringify(db), (err) => {
-            if (err) return;
-          },
-        );
         resolve(newInstance);
       }, 100);
     });

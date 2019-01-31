@@ -36,6 +36,7 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(400);
         assert.equal(false, res.body.success);
+        assert.equal('phoneNumber should be 11 characters', res.body.error);
         done();
       });
   });
@@ -47,6 +48,7 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(400);
         assert.equal(false, res.body.success);
+        assert.equal('firstname field cannot be empty', res.body.error);
         done();
       });
   });
@@ -58,6 +60,7 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(400);
         assert.equal(false, res.body.success);
+        assert.equal('lastname field cannot be empty', res.body.error);
         done();
       });
   });
@@ -69,6 +72,7 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(400);
         assert.equal(false, res.body.success);
+        assert.equal('othername field cannot be empty', res.body.error);
         done();
       });
   });
@@ -80,6 +84,7 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(400);
         assert.equal(false, res.body.success);
+        assert.equal('passportUrl field cannot be empty', res.body.error);
         done();
       });
   });
@@ -91,6 +96,7 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(400);
         assert.equal(false, res.body.success);
+        assert.equal('Password length must be more than 6 characters', res.body.error);
         done();
       });
   });
@@ -101,8 +107,15 @@ describe('Politico user controller', () => {
       .send(user.signUp)
       .end((err, res) => {
         res.should.have.status(201);
+        assert.equal(user.signUp.firstname, res.body.data[0].firstname);
+        assert.equal(user.signUp.lastname, res.body.data[0].lastname);
+        assert.equal(user.signUp.othername, res.body.data[0].othername);
+        assert.equal(user.signUp.phoneNumber, res.body.data[0].phoneNumber);
+        assert.equal(user.signUp.passportUrl, res.body.data[0].passportUrl);
+        assert.equal(user.signUp.email, res.body.data[0].email);
+        assert.equal(user.signUp.password, res.body.data[0].password);
         done();
       });
-  });
+  })
 
 });

@@ -1,11 +1,8 @@
 import path from 'path';
 import fs from 'fs';
 import Users from '../models/UsersModel';
+import db from '../datastore';
 
-
-const file = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../datastore/index.json'), 'utf8'),
-);
 
 
 export default {
@@ -15,7 +12,7 @@ export default {
       firstname, lastname, othername, email,
       phoneNumber, passportUrl, password,
     } = req.body;
-    let id = file.users.length;
+    let id = db.users.length;
     id += 1;
     const isAdmin = false;
     let user;

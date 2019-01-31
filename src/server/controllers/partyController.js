@@ -1,18 +1,15 @@
 import path from 'path';
 import fs from 'fs';
 import Parties from '../models/PartiesModel';
+import db from '../datastore';
 
-
-const file = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../datastore/index.json'), 'utf8'),
-);
 
 export default {
   createParty: async (req, res) => {
     const {
       userId, name, hqAddress, logoUrl,
     } = req.body;
-    let id = file.party.length;
+    let id = db.party.length;
     id += 1;
     let party;
     try {
@@ -22,9 +19,7 @@ export default {
       party = await partyModel.save();
       return res.status(201).json({
         status: 201,
-        data: [{
-          id, name,
-        }],
+        data: [party],
       });
     } catch (error) {
       return res.status(400).json({
