@@ -13,6 +13,7 @@ route.post('/parties', validateRequest, PartyController.createParty);
 route.get('/parties', PartyController.getParties);
 route.get('/party/:id', PartyController.getParty);
 route.patch('/parties/:id/name', validateRequest, PartyController.editParty);
+route.delete('/parties/:id', PartyController.deleteParty);
 
 
 export default route;

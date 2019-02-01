@@ -32,7 +32,7 @@ export default {
   getParties: async (req, res) => {
     let parties;
     try {
-      parties = await db.party;
+      parties = await Parties.getParties();
       return res.status(200).json({
         status: 200,
         data: parties,
@@ -46,10 +46,8 @@ export default {
   },
 
   getParty: async (req, res) => {
-    let party;
     try {
-      party = new Parties(req.params.id);
-      const result = await party.getParty();
+      const result = await Parties.getParty(req.params.id);
       return res.status(200).json({
         status: 200,
         data: result,
@@ -60,14 +58,11 @@ export default {
         data: error,
       });
     }
-    
   },
 
   editParty: async (req, res) => {
-    let party;
     try {
-      party = new Parties(req.params.id, req.body.name);
-      const result = await party.patchParty();
+      const result = await Parties.patchParty(req.params.id, req.body.name);
       return res.status(200).json({
         status: 200,
         data: result,
@@ -79,4 +74,19 @@ export default {
       });
     }
   },
+
+  deleteParty: async (req, res) => {
+    try {
+      const result = await Parties.deleteParty(req.params.id);
+      res.status(200).json({
+        status: 200,
+        data: [result],
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: 400,
+        data: error,
+      });
+    }  
+  }
 };

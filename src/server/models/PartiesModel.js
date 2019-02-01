@@ -7,14 +7,12 @@ dotenv.config();
 
 
 export default class Parties {
-  constructor(id=6, name = 'Bolu', userId = 4,  
-    hqAddress = '12, Inanapaja, Lagos', 
-    logoUrl = 'https://www.url.com') {
-      this.id = id;
-      this.userId = userId;
-      this.name = name;
-      this.hqAddress = hqAddress;
-      this.logoUrl = logoUrl; 
+  constructor(id, name, userId, hqAddress, logoUrl) {
+    this.id = id;
+    this.userId = userId;
+    this.name = name;
+    this.hqAddress = hqAddress;
+    this.logoUrl = logoUrl; 
   }
 
   save() {
@@ -32,17 +30,33 @@ export default class Parties {
       }, 100);
     });
   }
+  static getParties(){
+    return db.party;
+  }
 
-  getParty() {
-    const party = db.party.filter(item => item.id == this.id);
+  static getParty(id) {
+    const party = db.party.filter(item => item.id == id);
     return party;
   }
 
-  patchParty() {
-    let party = db.party.filter(item => item.id == this.id);
+  static patchParty(id, name) {
+    let party = db.party.filter(item => item.id == id);
     const index = db.party.indexOf(party[0]);
-    party[0].name = this.name;
+    party[0].name = name;
     db.party[index] = party;
     return party;
+  }
+
+  static deleteParty(id) {
+    let party = db.party.filter(item => item.id == id);
+    db.party.map((item) => {
+      const index = db.party.indexOf(item);
+      if(db.party[index] === party[0]) {
+        db.party.splice(item, 1);
+      }
+    });
+    return {
+      message: 'Party deleted successfully'
+    }
   }
 }
