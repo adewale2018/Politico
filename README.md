@@ -6,7 +6,7 @@
 # Politico
 Politico is a simple app that enables citizens to give their mandate to politicians running for different government offices while building trust in the process through transparency.
 
-A live demo of the app can be access on Heroku <b><a href="https://politico.herokuapp.com/">Politico</a></b>
+A live demo of the app can be access on Heroku <b><a href="https://andela-politico.herokuapp.com/">Politico</a></b>
 
 # Feature
 Politico allows users to do the following.
@@ -29,8 +29,9 @@ Politico allows users to do the following.
 | ------------------------ | ----------- | ------------------------------------------ |
 | /api/v1/signup           | POST        | Returns payload a new user sign up         |
 | /api/v1/parties          | GET         | Get all the parties                        |
+| /api/v1/party/:id        | GET         | Get a specific political party             |
 | /api/v1/parties          | POST        | Create new party                           |
-| /api/v1/parties/:id/name | PUT         | Update the name of a specific party        |
+| /api/v1/parties/:id/name | PATCH       | Update the name of a specific party        |
 | /api/v1/parties/:id      | DELETE      | Delete a particular political party        |
 
 
