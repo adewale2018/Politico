@@ -101,4 +101,15 @@ describe('Politico user controller', () => {
         done();
       });
   });
+  it('should return 200 on successful delete of a specific political party', (done) => {
+    chai.request(app)
+      .delete('/api/v1/parties/1')
+      .set('Content-Type', 'application/json')
+      .send(user.deleteParties)
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal('Party deleted successfully', res.body.data[0].message);
+        done();
+      });
+  });
 });
