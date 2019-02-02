@@ -86,6 +86,18 @@ export const mockData =  {
     },
     editParties: {
       name: 'Boluwatife'
+    },
+    nameError: {
+      type: "Action Congress",
+      name: ""
+    },
+    typeError: {
+      type: "",
+      name: "presidential"
+    },
+    offices: {
+      type: "federal",
+      name: "presidential"
     }
   }
 };
