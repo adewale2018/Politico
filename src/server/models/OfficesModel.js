@@ -31,4 +31,9 @@ export default class Offices {
   static getOffices() {
     return db.offices;
   }
+
+  static getOffice(id) {
+    const office = db.offices.filter(item => item.id == id);
+    return office;
+  }
 }

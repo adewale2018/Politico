@@ -52,4 +52,15 @@ describe('Politico user controller', () => {
         done();
       });
   });
+  it('should return 200 on successful get of a specific office', (done) => {
+    chai.request(app)
+      .get('/api/v1/office/1')
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(user.offices.type, res.body.data[0].type);
+        assert.equal(user.offices.name, res.body.data[0].name);
+        done();
+      });
+  });
 });

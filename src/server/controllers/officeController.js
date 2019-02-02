@@ -42,5 +42,20 @@ export default {
         data: error,
       });
     }
+  },
+
+  getOffice: async (req, res) => {
+    try {
+      const result = await Offices.getOffice(req.params.id);
+      return res.status(200).json({
+        status: 200,
+        data: result,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        data: errorr,
+      });
+    }
   }
 }
