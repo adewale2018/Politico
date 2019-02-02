@@ -17,6 +17,7 @@ route.patch('/parties/:id/name', validateRequest, PartyController.editParty);
 route.delete('/parties/:id', PartyController.deleteParty);
 route.post('/offices', validateRequest, OfficeController.createOffice);
 route.get('/offices', validateRequest, OfficeController.getOffices);
+route.get('/office/:id', validateRequest, OfficeController.getOffice);
 
 
 
