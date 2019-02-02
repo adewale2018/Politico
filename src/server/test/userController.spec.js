@@ -1,6 +1,6 @@
 const chai = require('chai');
 const assert = require('assert');
-const chaiHttp = require('chai-http');
+const chaiHttp = require('chai-http');``
 const dotenv = require('dotenv');
 const app = require('../../../index');
 const { mockData } = require('../__mockData__/mockData');

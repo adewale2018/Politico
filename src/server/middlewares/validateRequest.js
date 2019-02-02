@@ -113,7 +113,40 @@ const validateRequestBody = (request) => {
             .trim()
             .matches(/\w/);
           break;
-
+          case 'officeName':
+          request.check(
+            'officeName',
+            'officeName field cannot be empty',
+          )
+            .trim()
+            .notEmpty();
+          request.check('officeName', 'officeName must be more than 5 characters')
+            .trim()
+            .isLength(5, 100);
+          request.check(
+            'officeName',
+            'officeName should contain only alphabets',
+          )
+            .trim()
+            .matches(/\w/);
+          break;
+          case 'type':
+          request.check(
+            'type',
+            'type field cannot be empty',
+          )
+            .trim()
+            .notEmpty();
+          request.check('type', 'type must be more than 5 characters')
+            .trim()
+            .isLength(5, 100);
+          request.check(
+            'type',
+            'type should contain only alphabets',
+          )
+            .trim()
+            .matches(/\w/);
+          break;
         case 'passportUrl':
           request.check(
             'passportUrl',
