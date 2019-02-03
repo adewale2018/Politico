@@ -18,7 +18,7 @@ nav p {
   float: left;
   padding: 0 20px;
   letter-spacing: 3px;
-  margin-right: 700px;
+  margin-right: 900px;
 }
 nav p:hover {
   color: #fff;
@@ -77,9 +77,9 @@ nav ul li ul li a:hover {
   
 }
 
-i{
-  font-size: 25px;
-  margin-left: 2px;
+#arrow {
+  font-weight: bolder;
+  /* font-size: 1rem; */
 }
 
 /*Nav ends here*/
@@ -178,7 +178,7 @@ table th {
 
 .logo {
   border: 1px solid #11122b;
-  width: 20%;
+  width: 10%;
   border-radius: 50%;
 }
 button {
@@ -300,6 +300,32 @@ transition: background 500ms;
 background: #444;
 cursor: pointer;
 }
+/* pagination */
+.center {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #11122b;
+  color: white;
+  border: 1px solid #11122b;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 
 .login-in{
   max-width: 350px;
