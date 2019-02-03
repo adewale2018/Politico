@@ -2,13 +2,22 @@ import express from 'express';
 
 import validateRequest from '../middlewares/validateRequest';
 import UserController from '../controllers/userController';
+import PartyController from '../controllers/partyController';
+import OfficeController from '../controllers/officeController';
 
 
 const route = express.Router();
 
-route.get('/', UserController.home);
+route.post('/signup', validateRequest, UserController.adminSignUp);
+route.post('/parties', validateRequest, PartyController.createParty);
+route.get('/parties', PartyController.getParties);
+route.get('/party/:id', PartyController.getParty);
+route.patch('/parties/:id/name', validateRequest, PartyController.editParty);
+route.delete('/parties/:id', PartyController.deleteParty);
+route.post('/offices', validateRequest, OfficeController.createOffice);
+route.get('/offices', validateRequest, OfficeController.getOffices);
+route.get('/office/:id', validateRequest, OfficeController.getOffice);
 
-route.post('/admin/signup', validateRequest, UserController.adminSignUp);
 
 
 export default route;

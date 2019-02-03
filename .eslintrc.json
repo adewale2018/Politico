@@ -1,9 +1,17 @@
 {
-    "extends": "airbnb-base",
+   
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb"
+    ],
     "rules": {
         "linebreak-style": 0,
         "guard-for-in": 0,
         "no-restricted-syntax": 0,
-        "max-len": [1, 80, 2]
+        "max-len": [1, 80, 2],
+        "no-undef": "error"
     }
 }

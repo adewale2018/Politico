@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
+import db from '../datastore/index';
 
 dotenv.config();
 
 
-export default class Models {
+export default class Users {
   constructor(id, firstname, email, lastname,
     othername, phoneNumber, passportUrl, password, isAdmin) {
     this.id = id;
@@ -38,17 +39,7 @@ export default class Models {
           password: this.password,
           isAdmin: this.isAdmin,
         };
-        const file = fs.readFileSync(
-          path.join(__dirname, '../datastore/index.json'), 'utf8',
-        );
-        const db = JSON.parse(file);
         db.users.push(newInstance);
-        fs.writeFileSync(
-          path.join(__dirname, '../database/index.json'),
-          JSON.stringify(db), (err) => {
-            if (err) return;
-          },
-        );
         resolve(newInstance);
       }, 100);
     });

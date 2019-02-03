@@ -6,8 +6,8 @@
     "scripts": {
         "start:dev": "nodemon --inspect .",
         "start": "node .",
-        "test": "nyc --reporter=text --reporter=html --reporter=lcov mocha server/test --timeout 40000 --exit --compilers js:babel-register && npm run coverage-report",
-       "coverage-report": "cat ./coverage/lcov.info | coveralls"
+        "test": "nyc --reporter=text --reporter=html --reporter=lcov mocha src/server/test --timeout 20000 --exit --compilers js:babel-register && npm run coverage-report",
+        "coverage-report": "cat ./coverage/lcov.info | coveralls"
     },
     "author": "Saheed Adewale Shittu",
     "license": "ISC",
@@ -24,11 +24,12 @@
     },
     "devDependencies": {
         "assert": "^1.4.1",
+        "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.7.0",
         "babel-register": "^6.26.0",
         "cat": "^0.2.0",
         "chai": "^4.2.0",
-        "chai-http": "^4.2.1",
+        "chai-http": "^4.2.0",
         "coveralls": "^3.0.2",
         "eslint": "^5.12.1",
         "eslint-config-airbnb-base": "^13.1.0",
