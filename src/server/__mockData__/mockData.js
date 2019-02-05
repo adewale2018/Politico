@@ -1,3 +1,4 @@
+const faker =  require('faker');
 
 export const mockData =  {
   user: {
@@ -61,7 +62,7 @@ export const mockData =  {
       othername: "Adewale",
       phoneNumber: "08065121234",
       passportUrl: "https://passorturl.io",
-      email: "walewale@gmail.com",
+      email: faker.internet.email(),
       password: "041419122"
     },
     partiesLogoUrlError: {

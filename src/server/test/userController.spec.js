@@ -106,14 +106,13 @@ describe('Politico user controller', () => {
       .set('Content-Type', 'application/json')
       .send(user.signUp)
       .end((err, res) => {
-        res.should.have.status(201);
+         res.should.have.status(201);
         assert.equal(user.signUp.firstname, res.body.data[0].firstname);
         assert.equal(user.signUp.lastname, res.body.data[0].lastname);
         assert.equal(user.signUp.othername, res.body.data[0].othername);
-        assert.equal(user.signUp.phoneNumber, res.body.data[0].phoneNumber);
-        assert.equal(user.signUp.passportUrl, res.body.data[0].passportUrl);
+        assert.equal(user.signUp.phoneNumber, res.body.data[0].phonenumber);
+        assert.equal(user.signUp.passportUrl, res.body.data[0].passporturl);
         assert.equal(user.signUp.email, res.body.data[0].email);
-        assert.equal(user.signUp.password, res.body.data[0].password);
         done();
       });
   })
