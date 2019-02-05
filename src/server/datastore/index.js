@@ -11,7 +11,6 @@ if(NODE_ENV ==='test') {
   connectionString = process.env.DB_HOST_TEST;
 } else {
   connectionString = process.env.DATABASE_URL;
-  console.log(connectionString);
 }
 
 const db = new Pool({ connectionString: connectionString });

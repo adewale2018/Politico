@@ -9,11 +9,12 @@ export default {
  signUp: async (req, res) => {
    const {
     firstname, email, lastname, othername,
-    phoneNumber, passportUrl, password
+    phoneNumber, passportUrl
   } = req.body;
     const isAdmin = false;
     req.body['isAdmin'] = isAdmin;
     req.body.password = Helpers.hashPwd(req.body.password);
+    const { password } = req.body;
     let user;
     try {
       user = await db.query(
