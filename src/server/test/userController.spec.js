@@ -107,9 +107,9 @@ describe('Politico user controller', () => {
       .send(user.signUp)
       .end((err, res) => {
          res.should.have.status(201);
-        assert.equal(user.signUp.firstname, res.body.data[0].firstname);
-        assert.equal(user.signUp.lastname, res.body.data[0].lastname);
-        assert.equal(user.signUp.othername, res.body.data[0].othername);
+        assert.equal(user.signUp.firstName, res.body.data[0].firstname);
+        assert.equal(user.signUp.lastName, res.body.data[0].lastname);
+        assert.equal(user.signUp.otherName, res.body.data[0].othername);
         assert.equal(user.signUp.phoneNumber, res.body.data[0].phonenumber);
         assert.equal(user.signUp.passportUrl, res.body.data[0].passporturl);
         assert.equal(user.signUp.email, res.body.data[0].email);

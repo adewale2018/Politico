@@ -12,10 +12,21 @@ CREATE TABLE users
   lastname VARCHAR(100) NOT NULL,
   othername VARCHAR(100) NOT NULL,
   email TEXT NOT NULL UNIQUE,
-  phoneNumber VARCHAR(11) NOT NULL,
-  passportUrl VARCHAR(255) NOT NULL,
+  phonenumber VARCHAR(11) NOT NULL,
+  passporturl VARCHAR(255) NOT NULL,
   isAdmin BOOLEAN,
   pass TEXT,
-  createdAt timestamp with time zone DEFAULT now() NOT NULL,
-  updatedAt timestamp with time zone DEFAULT now() NOT NULL
+  createdat timestamp with time zone DEFAULT now() NOT NULL,
+  updatedat timestamp with time zone DEFAULT now() NOT NULL
+);
+
+CREATE TABLE parties
+(
+  ID serial PRIMARY KEY,
+  user_id int references users,
+  partyname TEXT NOT NULL UNIQUE,
+  hqaddress TEXT NOT NULL,
+  logourl TEXT NOT NULL,
+  createdat timestamp with time zone DEFAULT now() NOT NULL,
+  updatedat timestamp with time zone DEFAULT now() NOT NULL 
 );

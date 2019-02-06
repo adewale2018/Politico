@@ -57,9 +57,9 @@ export const mockData =  {
       password: "wan"
     },
     signUp: {
-      firstname: "Saheed",
-      lastname: "Shittu",
-      othername: "Adewale",
+      firstName: "Saheed",
+      lastName: "Shittu",
+      otherName: "Adewale",
       phoneNumber: "08065121234",
       passportUrl: "https://passorturl.io",
       email: faker.internet.email(),
@@ -81,7 +81,7 @@ export const mockData =  {
       logoUrl: "https://www.adewale.com"
     },
     parties: {
-      name: "Adewale",
+      name: faker.name.findName(),
       hqAddress: "12, Obanikoro Lagos, Nigeria", 
       logoUrl: "https://www.adewale.com"
     },
