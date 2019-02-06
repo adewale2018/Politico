@@ -47,10 +47,20 @@ export default {
 
   getParty: async (req, res) => {
     try {
-      const result = await Parties.getParty(req.params.id);
+      const party = await db.query(
+        `select * from parties where id = $1`, [req.params.id]
+
+      );
+      if(party.rowCount === 0){
+        return res.status(404).json({
+          status: 404,
+          message: 'Party not found',
+        })
+      }
       return res.status(200).json({
         status: 200,
-        data: result,
+        data: party.rows,
+        message: 'Fetch a specific party successfully',
       });
     } catch (error) {
       return res.status(400).json({
