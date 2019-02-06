@@ -65,18 +65,16 @@ describe('Politico user controller', () => {
         done();
       });
   });
-//   it('should return 200 on successful get of all parties', (done) => {
-//     chai.request(app)
-//       .get('/api/v1/parties')
-//       .set('Content-Type', 'application/json')
-//       .end((err, res) => {
-//         res.should.have.status(200);
-//         assert.equal(user.parties.name, res.body.data[0].name);
-//         assert.equal(user.parties.hqAddress, res.body.data[0].hqAddress);
-//         assert.equal(user.parties.logoUrl, res.body.data[0].logoUrl);
-//         done();
-//       });
-//   });
+  it('should return 200 on successful get of all parties', (done) => {
+    chai.request(app)
+      .get('/api/v1/parties')
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.message, 'Get parties successfully');
+        done();
+      });
+   });
 //   it('should return 200 on successful get of a specific party', (done) => {
 //     chai.request(app)
 //       .get('/api/v1/party/1')

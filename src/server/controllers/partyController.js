@@ -31,10 +31,11 @@ export default {
   getParties: async (req, res) => {
     let parties;
     try {
-      parties = await Parties.getParties();
+      parties = await db.query('select * from parties');
       return res.status(200).json({
         status: 200,
-        data: parties,
+        data: parties.rows,
+        message: 'Get parties successfully',
       });
     } catch (error) {
       return res.status(400).json({
