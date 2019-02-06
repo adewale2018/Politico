@@ -71,10 +71,21 @@ export default {
 
   editParty: async (req, res) => {
     try {
-      const result = await Parties.patchParty(req.params.id, req.body.name);
+      const result = await db.query(
+        `update parties set partyname=$1 where id=$2 
+         RETURNING id, partyname`,
+        [req.body.name, req.params.id]
+      )
+      if (result.rowCount === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'Party not found',
+        })
+      }
       return res.status(200).json({
         status: 200,
-        data: result,
+        data: result.rows,
+        message: 'Party name updated successfully',
       });
     } catch (error) {
       return res.status(400).json({
