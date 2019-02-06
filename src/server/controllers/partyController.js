@@ -1,5 +1,3 @@
-import path from 'path';
-import fs from 'fs';
 import Parties from '../models/PartiesModel';
 import db from '../datastore';
 
@@ -9,17 +7,18 @@ export default {
     const {
       userId, name, hqAddress, logoUrl,
     } = req.body;
-    let id = db.party.length;
-    id += 1;
     let party;
     try {
-      const partyModel = new Parties(
-        id, name, userId, hqAddress, logoUrl,
-      );
-      party = await partyModel.save();
+      party = await db.query(
+        `insert into parties(partyname, hqaddress, logourl,user_id)
+        values($1, $2, $3, $4) 
+        RETURNING id, partyname, hqaddress, logourl`,
+        [name, hqAddress, logoUrl, userId]
+      )
       return res.status(201).json({
         status: 201,
-        data: [party],
+        data: [party.rows[0]],
+        message: 'Party created successfully',
       });
     } catch (error) {
       return res.status(400).json({
