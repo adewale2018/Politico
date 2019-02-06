@@ -49,7 +49,6 @@ export default {
     try {
       const party = await db.query(
         `select * from parties where id = $1`, [req.params.id]
-
       );
       if(party.rowCount === 0){
         return res.status(404).json({
