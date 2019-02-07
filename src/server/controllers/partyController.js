@@ -96,12 +96,19 @@ export default {
   },
 
   deleteParty: async (req, res) => {
+    const deleteQuery = 'DELETE FROM parties WHERE id=$1 returning *';
     try {
-      const result = await Parties.deleteParty(req.params.id);
-      res.status(200).json({
-        status: 200,
-        data: [result],
-      });
+      const { rows } = await db.query(deleteQuery, [req.params.id]);
+      if(!rows[0]) {
+        return res.status(404).json({
+          status: 404,
+          message: 'Party not found',
+        });
+      }
+        return res.status(200).json({
+          status: 200,
+          message: 'Party deleted successfully',
+        });
     } catch (error) {
       res.status(400).json({
         status: 400,

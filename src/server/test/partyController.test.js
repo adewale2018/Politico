@@ -15,7 +15,17 @@ chai.use(chaiHttp);
 
 describe('Politico user controller', () => {
   const { user} = mockData;
-
+  let partyId;
+  before((done) => {
+    chai.request(app)
+    .post('/api/v1/parties')
+    .set('Content-Type', 'application/json')
+    .send(user.partyTest)
+    .end((err, res) => {
+      partyId = res.body.data[0].id;
+      done();
+    })
+  })
   it('should throw 400 if the logoUrl is empty', (done) => {
     chai.request(app)
       .post('/api/v1/parties')
@@ -77,7 +87,7 @@ describe('Politico user controller', () => {
    });
   it('should return 200 on successful get of a specific party', (done) => {
     chai.request(app)
-      .get('/api/v1/party/1')
+      .get(`/api/v1/party/${partyId}`)
       .set('Content-Type', 'application/json')
       .end((err, res) => {
         res.should.have.status(200);
@@ -97,7 +107,7 @@ describe('Politico user controller', () => {
   });
   it('should return 200 on successful update of a specific political party', (done) => {
     chai.request(app)
-      .patch('/api/v1/parties/1/name')
+      .patch(`/api/v1/parties/${partyId}/name`)
       .set('Content-Type', 'application/json')
       .send(user.editParties)
       .end((err, res) => {
@@ -117,15 +127,24 @@ describe('Politico user controller', () => {
         done();
       });
   });
-//   it('should return 200 on successful delete of a specific political party', (done) => {
-//     chai.request(app)
-//       .delete('/api/v1/parties/1')
-//       .set('Content-Type', 'application/json')
-//       .send(user.deleteParties)
-//       .end((err, res) => {
-//         res.should.have.status(200);
-//         assert.equal('Party deleted successfully', res.body.data[0].message);
-//         done();
-//       });
-//   });
+  it('should return 200 on successful delete of a specific political party', (done) => {
+    chai.request(app)
+      .delete(`/api/v1/parties/${partyId}`)
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal('Party deleted successfully', res.body.message);
+        done();
+      });
+  });
+  it('should return 404 if the party is not found', (done) => {
+    chai.request(app)
+      .delete(`/api/v1/parties/${partyId}`)
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.message, 'Party not found');
+        done();
+      });
+  });
 });
