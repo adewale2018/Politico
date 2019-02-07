@@ -83,7 +83,8 @@ export const mockData =  {
     parties: {
       name: faker.name.findName(),
       hqAddress: "12, Obanikoro Lagos, Nigeria", 
-      logoUrl: "https://www.adewale.com"
+      logoUrl: "https://www.adewale.com",
+      userId: 1
     },
     editParties: {
       name: 'Boluwatife'
@@ -99,6 +100,12 @@ export const mockData =  {
     offices: {
       type: "federal",
       name: "presidential"
+    },
+    partyTest: {
+      name: faker.name.findName(),
+      hqAddress: "12, Obanikoro Lagos, Nigeria", 
+      logoUrl: "https://www.adewale.com",
+      userId: 7
     }
   }
 };
