@@ -5,20 +5,23 @@ import db from '../datastore';
 
 export default {
   createOffice: async (req, res) => {
+    console.log(req.body);
     const{
-      type, name
+      type, name, userId
     } = req.body;
-    let id = db.offices.length;
-    id += 1;
+
     let office;
     try {
-      const officeModel = new Offices(
-        id, type, name,
-      );
-      office = await officeModel.save();
+      office = await db.query(
+        `insert into offices(officename, officetype, user_id)
+        values($1, $2, $3)
+        RETURNING id, officename, officetype`,
+        [name, type, userId]
+      )
       return res.status(201).json({
         status: 201,
-        data: [office],
+        data: [office.rows],
+        message: 'Office created successfully',
       });
     } catch (error) {
       return res.status(400).json({

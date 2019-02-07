@@ -30,3 +30,14 @@ CREATE TABLE parties
   createdat timestamp with time zone DEFAULT now() NOT NULL,
   updatedat timestamp with time zone DEFAULT now() NOT NULL 
 );
+
+CREATE TABLE offices
+(
+  ID serial PRIMARY KEY,
+  user_id int references users,
+  officename TEXT NOT NULL,
+  officetype TEXT NOT NULL,
+  createdat timestamp with time zone DEFAULT now() NOT NULL,
+  updatedat timestamp with time zone DEFAULT now() NOT NULL 
+
+)

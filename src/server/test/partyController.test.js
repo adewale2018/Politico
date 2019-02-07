@@ -137,13 +137,16 @@ describe('Politico user controller', () => {
         done();
       });
   });
-  it('should return 404 if the party is not found', (done) => {
+  it('should return 201 on successful creation of the office', (done) => {
     chai.request(app)
-      .delete(`/api/v1/parties/${partyId}`)
+      .post('/api/v1/offices')
       .set('Content-Type', 'application/json')
+      .send(user.offices)
       .end((err, res) => {
-        res.should.have.status(404);
-        assert.equal(res.body.message, 'Party not found');
+        res.should.have.status(201);
+        assert.equal(user.offices.officename, res.body.data[0].officename);
+        assert.equal(user.parties.officetype, res.body.data[0].officetype);
+        
         done();
       });
   });
