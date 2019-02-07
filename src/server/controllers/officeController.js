@@ -1,11 +1,10 @@
-import Offices from '../models/OfficesModel';
+
 import db from '../datastore';
 
 
 
 export default {
   createOffice: async (req, res) => {
-    console.log(req.body);
     const{
       type, name, userId
     } = req.body;
@@ -20,7 +19,7 @@ export default {
       )
       return res.status(201).json({
         status: 201,
-        data: [office.rows],
+        data: [office.rows[0]],
         message: 'Office created successfully',
       });
     } catch (error) {
@@ -34,10 +33,11 @@ export default {
   getOffices: async (req, res) => {
     let offices;
     try {
-      offices = await Offices.getOffices();
+      offices = await db.query('select * from offices');
       return res.status(200).json({
         status: 200,
-        data: offices,
+        data: offices.rows,
+        message: 'Get political offices successfully',
       });
     } catch (error) {
       return  res.status(400).json({
@@ -49,10 +49,19 @@ export default {
 
   getOffice: async (req, res) => {
     try {
-      const result = await Offices.getOffice(req.params.id);
+      const result = await db.query(
+        `select * from offices where id = $1`, [req.params.id]
+      );
+      if(result.rowCount === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'Office not found',
+        })
+      }
       return res.status(200).json({
         status: 200,
-        data: result,
+        data: result.rows,
+        message: 'Fetch a particular office successfully',
       });
     } catch (error) {
       return res.status(400).json({

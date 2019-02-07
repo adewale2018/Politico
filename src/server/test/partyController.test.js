@@ -13,7 +13,7 @@ chai.use(chaiHttp);
 
 
 
-describe('Politico user controller', () => {
+describe('Politico party controller', () => {
   const { user} = mockData;
   let partyId;
   before((done) => {
@@ -134,19 +134,6 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(200);
         assert.equal('Party deleted successfully', res.body.message);
-        done();
-      });
-  });
-  it('should return 201 on successful creation of the office', (done) => {
-    chai.request(app)
-      .post('/api/v1/offices')
-      .set('Content-Type', 'application/json')
-      .send(user.offices)
-      .end((err, res) => {
-        res.should.have.status(201);
-        assert.equal(user.offices.officename, res.body.data[0].officename);
-        assert.equal(user.parties.officetype, res.body.data[0].officetype);
-        
         done();
       });
   });

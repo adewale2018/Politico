@@ -8,12 +8,12 @@ const validateRequestBody = (request) => {
   if (Object.hasOwnProperty.call(request, 'body')) {
     for (const key in request.body) {
       switch (key) {
-        case 'firstname':
-          request.check('firstname', 'firstname field cannot be empty')
+        case 'firstName':
+          request.check('firstName', 'firstname field cannot be empty')
             .trim()
             .notEmpty()
             .matches(/\w/);
-          request.check('firstname', 'firstname must be more than 2 characters')
+          request.check('firstName', 'firstname must be more than 2 characters')
             .trim()
             .isLength(2, 50);
           break;
@@ -61,36 +61,36 @@ const validateRequestBody = (request) => {
             .notEmpty();
           break;
 
-        case 'lastname':
+        case 'lastName':
           request.check(
-            'lastname',
+            'lastName',
             'lastname field cannot be empty'
           )
             .trim()
             .notEmpty();
-          request.check('lastname', 'lastname must be more than 2 characters')
+          request.check('lastName', 'lastname must be more than 2 characters')
             .trim()
             .isLength(2, 50);
           request.check(
-            'lastname',
+            'lastName',
             'lastname should contain only alphabets',
           )
             .trim()
             .matches(/\w/);
           break;
         
-        case 'othername':
+        case 'otherName':
           request.check(
-            'othername',
+            'otherName',
             'othername field cannot be empty',
           )
             .trim()
             .notEmpty();
-          request.check('othername', 'othername must be more than 2 characters')
+          request.check('otherName', 'othername must be more than 2 characters')
             .trim()
             .isLength(2, 50);
           request.check(
-            'othername',
+            'otherName',
             'othername should contain only alphabets',
           )
             .trim()
@@ -175,7 +175,7 @@ const validateRequestBody = (request) => {
             .trim()
             .notEmpty();
           request.check(
-            'logolUrl',
+            'logoUrl',
             'logoUrl must not be more than 50 characters',
           )
             .isLength({ max: 50 });

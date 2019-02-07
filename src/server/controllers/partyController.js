@@ -1,4 +1,3 @@
-import Parties from '../models/PartiesModel';
 import db from '../datastore';
 
 
