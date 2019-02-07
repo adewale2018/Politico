@@ -3,54 +3,54 @@ const faker =  require('faker');
 export const mockData =  {
   user: {
     signUpPhoneNumberError: {
-      firstname: "assssss",
-      lastname: "Ilupeju, Lagos",
-      othername: "Wale",
+      firstName: "assssss",
+      lastName: "Ilupeju, Lagos",
+      otherName: "Wale",
       phoneNumber: "090909090",
       passportUrl: "www.ggogle.com",
       email: "wale@gmail.com",
       password: "shittu"
     },
     signUpFirstnameError: {
-      firstname: "",
-      lastname: "Ilupeju, Lagos",
-      othername: "Wale",
+      firstName: "",
+      lastName: "Ilupeju, Lagos",
+      otherName: "Wale",
       phoneNumber: "090909090",
       passportUrl: "www.ggogle.com",
       email: "wale@gmail.com",
       password: "shittu"
     },
     signUpLastnameError: {
-      firstname: "Saheed",
-      lastname: "",
-      othername: "Wale",
-      phoneNumber: "090909090",
+      firstName: "Saheed",
+      lastName: "",
+      otherName: "Wale",
+      phoneNumber: "09090909023",
       passportUrl: "www.ggogle.com",
       email: "wale@gmail.com",
       password: "shittu"
     },
     signUpOthernameError: {
-      firstname: "Saheed",
-      lastname: "Shittu",
-      othername: "",
+      firstName: "Saheed",
+      lastName: "Shittu",
+      otherName: "",
       phoneNumber: "090909090",
       passportUrl: "www.ggogle.com",
       email: "wale@gmail.com",
       password: "shittu"
     },
     signUpPassportUrlError: {
-      firstname: "Saheed",
-      lastname: "Shittu",
-      othername: "Ade",
+      firstName: "Saheed",
+      lastName: "Shittu",
+      otherName: "Ade",
       phoneNumber: "08012121212",
       passportUrl: "",
       email: "wale@gmail.com",
       password: "shittu"
     },
     signUpPasswordError: {
-      firstname: "Saheed",
-      lastname: "Shittu",
-      othername: "Ade",
+      firstName: "Saheed",
+      lastName: "Shittu",
+      otherName: "Ade",
       phoneNumber: "09090909012",
       passportUrl: "wwwwwwwwwww",
       email: "wale@gmail.com",
@@ -87,7 +87,7 @@ export const mockData =  {
       userId: 1
     },
     editParties: {
-      name: 'Boluwatife'
+      name: faker.name.findName()
     },
     nameError: {
       type: "Action Congress",
@@ -99,7 +99,8 @@ export const mockData =  {
     },
     offices: {
       type: "federal",
-      name: "presidential"
+      name: "presidential",
+      userId: 1
     },
     partyTest: {
       name: faker.name.findName(),

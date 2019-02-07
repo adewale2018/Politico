@@ -13,7 +13,7 @@ chai.use(chaiHttp);
 
 
 
-describe('Politico user controller', () => {
+describe('Politico party controller', () => {
   const { user} = mockData;
   let partyId;
   before((done) => {
@@ -134,16 +134,6 @@ describe('Politico user controller', () => {
       .end((err, res) => {
         res.should.have.status(200);
         assert.equal('Party deleted successfully', res.body.message);
-        done();
-      });
-  });
-  it('should return 404 if the party is not found', (done) => {
-    chai.request(app)
-      .delete(`/api/v1/parties/${partyId}`)
-      .set('Content-Type', 'application/json')
-      .end((err, res) => {
-        res.should.have.status(404);
-        assert.equal(res.body.message, 'Party not found');
         done();
       });
   });
