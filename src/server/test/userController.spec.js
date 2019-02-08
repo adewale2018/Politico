@@ -30,7 +30,7 @@ describe('Politico user controller', () => {
   });
   it('should throw 400 if the phoneNumber is not up to 11 digits', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUpPhoneNumberError)
       .end((err, res) => {
@@ -42,7 +42,43 @@ describe('Politico user controller', () => {
   });
   it('should throw 400 if the firstname is empty', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
+      .set('Content-Type', 'application/json')
+      .send(user.signUpFirstnameError)
+      .end((err, res) => {
+        res.should.have.status(400);
+        assert.equal(false, res.body.success);
+        assert.equal('firstname field cannot be empty', res.body.error);
+        done();
+      });
+  });
+  it('should throw 400 if the email is empty', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .set('Content-Type', 'application/json')
+      .send(user.signInEmailError)
+      .end((err, res) => {
+        res.should.have.status(400);
+        assert.equal(false, res.body.success);
+        assert.equal('Email address field cannot be empty', res.body.error);
+        done();
+      });
+  });
+  it('should throw 400 if the password is empty', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .set('Content-Type', 'application/json')
+      .send(user.signInPasswordError)
+      .end((err, res) => {
+        res.should.have.status(400);
+        assert.equal(false, res.body.success);
+        assert.equal('Password field cannot be empty', res.body.error);
+        done();
+      });
+  });
+  it('should throw 400 if the firstname is empty', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUpFirstnameError)
       .end((err, res) => {
@@ -54,7 +90,7 @@ describe('Politico user controller', () => {
   });
   it('should throw 400 if the lastname is empty', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUpLastnameError)
       .end((err, res) => {
@@ -66,7 +102,7 @@ describe('Politico user controller', () => {
   });
   it('should throw 400 if the othername is empty', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUpOthernameError)
       .end((err, res) => {
@@ -78,7 +114,7 @@ describe('Politico user controller', () => {
   });
   it('should throw 400 if the passportUrl is empty', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUpPassportUrlError)
       .end((err, res) => {
@@ -90,7 +126,7 @@ describe('Politico user controller', () => {
   });
   it('should throw 400 if the password is empty', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUpPasswordError)
       .end((err, res) => {
@@ -102,7 +138,7 @@ describe('Politico user controller', () => {
   });
   it('should return 201 when signup is successfull', (done) => {
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .set('Content-Type', 'application/json')
       .send(user.signUp)
       .end((err, res) => {
@@ -115,5 +151,16 @@ describe('Politico user controller', () => {
         assert.equal(user.signUp.email, res.body.data[0].email);
         done();
       });
-  })
+  });
+  it('should return 404 when user is not found', (done) => {
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .set('Content-Type', 'application/json')
+      .send(user.signInError)
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.message, 'Password or Email is incorrect!');
+        done();
+      });
+  });
 });

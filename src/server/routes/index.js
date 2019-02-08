@@ -9,7 +9,8 @@ import OfficeController from '../controllers/officeController';
 
 const route = express.Router();
 
-route.post('/signup', validateRequest, UserController.signUp);
+route.post('/auth/signup', validateRequest, UserController.signUp);
+route.post('/auth/signin', validateRequest, UserController.signIn);
 route.post('/parties', validateRequest, PartyController.createParty);
 route.get('/parties', PartyController.getParties);
 route.get('/party/:id', PartyController.getParty);

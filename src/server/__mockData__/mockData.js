@@ -65,6 +65,22 @@ export const mockData =  {
       email: faker.internet.email(),
       password: "041419122"
     },
+    signIn: {
+      email: "kolawole.kola@gmail.com",
+      password: "Shetima1234",
+    },
+    signInPasswordError: {
+      email: faker.internet.email(),
+      password: ""
+    },
+    signInEmailError: {
+      email: "",
+      password: "041419122"
+    },
+    signInError: {
+      email: faker.internet.email(),
+      password: "041419122"
+    },
     partiesLogoUrlError: {
       name: "Action Congress",
       hqAddress: "12, Oshodi, Lagos, Nig",
