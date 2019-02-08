@@ -163,17 +163,4 @@ describe('Politico user controller', () => {
         done();
       });
   });
-  it('should return 200 when signin is successfull', (done) => {
-    chai.request(app)
-      .post('/api/v1/auth/signin')
-      .set('Content-Type', 'application/json')
-      .send(user.signIn)
-      .end((err, res) => {
-        res.should.have.status(200);
-        assert.equal(user.signIn.email, res.body.data[0].email);
-        assert.equal(res.body.message, 'User signin successfully');
-        
-        done();
-      });
-  });
 });
