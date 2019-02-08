@@ -53,7 +53,7 @@ export default {
         return res.status(404).json({
           status: 404,
           message: 'Party not found',
-        })
+        });
       }
       return res.status(200).json({
         status: 200,
